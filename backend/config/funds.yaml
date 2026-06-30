@@ -1,0 +1,61 @@
+amcs:
+  - id: nippon
+    name: Nippon India Mutual Fund
+    file_pattern: multi_tab        # One Excel file contains all Nippon funds across tabs
+    download_method: manual        # "direct" | "selenium" | "manual"
+    base_url: "https://mf.nipponindiaim.com/investor-service/downloads/factsheet-portfolio-and-other-disclosures"
+    # CSS selectors for Selenium web scraping (not used for manual method)
+    selectors:
+      link_text_pattern: "FACTSHEET PORTFOLIO AND OTHER"  # Partial match of link text
+      link_selector: "a"  # CSS selector for download link
+      wait_element: "body"    # Element to wait for before scraping
+
+  # - id: sbi
+  #   name: SBI Mutual Fund
+  #   file_pattern: single_file      # One Excel file per fund
+  #   download_method: manual         # Change to selenium once URL is discovered
+  #   base_url: ""                   # TODO: Find SBI's portfolio disclosure page URL
+  #   selectors:
+  #     link_text_pattern: "Portfolio"
+  #     link_selector: "a[download]"
+
+  # Template for adding new fund houses:
+  # - id: new_amc
+  #   name: New AMC Mutual Fund
+  #   file_pattern: multi_tab | single_file
+  #   download_method: selenium | direct | manual
+  #   base_url: "https://..."
+  #   direct_url: "https://..." (optional, for direct downloads)
+  #   selectors:
+  #     link_text_pattern: "text to match"
+  #     link_selector: "a.download-btn"
+  #     wait_element: ".portfolio-list"
+
+funds:
+  - id: nippon_small_cap
+    name: Nippon India Small Cap Fund
+    cap_category: small_cap
+    amfi_code: "INF123"
+    amc_id: nippon
+    sheet_name: "Small Cap Fund"   # Tab name inside Nippon's multi-tab Excel
+    is_active: true
+
+  # - id: sbi_small_cap
+  #   name: SBI Small Cap Fund
+  #   cap_category: small_cap
+  #   amfi_code: "INF456"
+  #   amc_id: sbi
+  #   sheet_name: null
+  #   is_active: true
+
+  # TODO: Add remaining 8 small cap funds with proper AMFI codes and AMC IDs
+  # You can discover AMFI codes at: https://www.amfiindia.com/online-center/portfolio-disclosure
+  
+  # - id: axis_small_cap
+  #   name: Axis Small Cap Fund
+  #   cap_category: small_cap
+  #   amfi_code: "INF789"
+  #   amc_id: axis
+  #   sheet_name: null
+  #   is_active: true
+

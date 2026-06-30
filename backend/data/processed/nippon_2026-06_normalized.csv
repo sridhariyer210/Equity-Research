@@ -1,0 +1,6 @@
+isin,stock_name,sector,market_value_cr,pct_of_nav,instrument_type,rank_in_fund,fund_id,date
+INF174K01156,Infosys Limited,Information Technology,245.5,8.5,equity,1,nippon_small_cap,2026-06-01
+INF174K01149,Bajaj Finance Limited,Financial Services,189.75,6.6,equity,2,nippon_small_cap,2026-06-01
+INF174K01164,Page Industries Limited,Consumer Durables,156.25,5.4,equity,3,nippon_small_cap,2026-06-01
+INF174K01172,Motherson Sumi Systems,Automobiles,134.8,4.7,equity,4,nippon_small_cap,2026-06-01
+INF174K01180,SKF India Limited,Industrial Products,125.4,4.4,equity,5,nippon_small_cap,2026-06-01
